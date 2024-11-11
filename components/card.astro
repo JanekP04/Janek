@@ -7,30 +7,60 @@ export interface Props{
 }
 
 const {title, description, image, url} = Astro.props as Props;
-const Cards = [
-    {
-        title: 'Card 1',
-        description: 'This is card 1',
-        image: 'https://picsum.photos/200/300',
-        url: 'https://www.google.com',
-    },
-    {
-        title: 'Card 2',
-        description: 'This is card 2',
-        image: 'https://picsum.photos/200/301',
-        url: 'https://www.google.com',
-    },
-    {
-        title: 'Card 3',
-        description: 'This is card 3',
-        image: 'https://picsum.photos/200/302',
-        url: 'https://www.google.com',
-    }
-];
 ---
-<div>
-    <img src={image} alt="thumbnail image">
-    <h1>{title}</h1>
-    <p>{description}</p>
-    <button><a href={url}>More</a></button>
+<div class="card">
+    <img src={image} alt="thumbnail image" class="card-image">
+    <h1 class="card-title">{title}</h1>
+    <p class="card-description">{description}</p>
+    <button class="card-button"><a href={url}>More</a></button>
 </div>
+
+<style>
+    .card {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        margin: 16px;
+        max-width: 300px;
+        text-align: center;
+        font-family: 'Roboto', sans-serif; /* Use Roboto or another modern font */
+    }
+
+    .card-image {
+        width: 100%;
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .card-title {
+        font-weight: bold;
+        font-size: 1.5em;
+        margin: 16px 0 8px;
+        color: #333; /* Dark color for the title */
+    }
+
+    .card-description {
+        font-size: 1em;
+        color: #666; /* Grey color for the description */
+        margin: 0 16px 16px;
+    }
+
+    .card-button {
+        background-color: #007BFF; /* Primary color for the button */
+        color: white;
+        border: none;
+        border-radius: 20px; /* Rounded border */
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .card-button a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .card-button:hover {
+        background-color: #0056b3; /* Darker shade on hover */
+    }
+</style>
