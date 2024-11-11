@@ -1,0 +1,32 @@
+---
+import Card from "./Card.astro";
+
+const projectCards = [
+    {
+        title: 'Card 1',
+        body: 'This is card 1',
+        image: 'https://picsum.photos/200/300',
+        url: 'https://www.example.com',
+    },
+    {
+        title: 'Card 2',
+        body: 'This is card 2',
+        image: 'https://picsum.photos/200/301',
+        url: 'https://www.example.com',
+    },
+    {
+        title: 'Card 3',
+        body: 'This is card 3',
+        image: 'https://picsum.photos/200/302',
+        url: 'https://www.example.com',
+    }
+];
+---
+
+<section class="projects">
+    <div class="container">
+        {projectCards.map(card => (
+            <Card  title={card.title} body={card.body} image={card.image} url={card.url} />
+        ))}
+    </div>
+</section>
