@@ -1,0 +1,23 @@
+---
+const Items = ['Home', 'About','Achievments','Skills','Education', 'Contact'];
+---
+<nav>
+    {
+        Items.map(item => (<ul><li>{item}</li></ul>))
+    }
+</nav>
+
+<style>
+    nav{
+        background: none;
+        width: 100%;
+        display: flex;
+        gap: 12px;
+    }
+    nav ul {
+        list-style: none;
+    }
+    li{
+        padding:0 3px 0 3px;
+    }
+</style>
